@@ -1,4 +1,4 @@
-package testcases;
+package testcases.login;
 
 import common.Log;
 import common.constants.Constants;
@@ -8,7 +8,7 @@ import pages.HomePage;
 import pages.LoginPage;
 import utils.BaseTest;
 
-public class TC02 extends BaseTest {
+public class TC02_Login_With_Blank_Username extends BaseTest {
     @Test
     public void TC02() {
         Log.info("User can't login with blank 'Username' textbox");

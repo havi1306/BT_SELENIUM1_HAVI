@@ -1,4 +1,4 @@
-package testcases;
+package testcases.login;
 
 import common.Log;
 import common.constants.Constants;
@@ -8,7 +8,7 @@ import pages.HomePage;
 import pages.LoginPage;
 import utils.BaseTest;
 
-public class TC04 extends BaseTest {
+public class TC04_Login_Page_Displays extends BaseTest {
     @Test
     public void TC04() {
         Log.info("Login page displays when un-logged User clicks on 'Book ticket' tab");

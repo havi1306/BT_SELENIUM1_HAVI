@@ -1,4 +1,4 @@
-package testcases;
+package testcases.login;
 
 import common.Log;
 import common.constants.Constants;
@@ -8,7 +8,7 @@ import pages.HomePage;
 import pages.LoginPage;
 import utils.BaseTest;
 
-public class TC01 extends BaseTest {
+public class TC01_Login_Successful extends BaseTest {
 
     @Test
     public void TC01() {

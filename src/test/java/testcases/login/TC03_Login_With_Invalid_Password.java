@@ -1,4 +1,4 @@
-package testcases;
+package testcases.login;
 
 import common.Log;
 import common.constants.Constants;
@@ -8,7 +8,7 @@ import pages.HomePage;
 import pages.LoginPage;
 import utils.BaseTest;
 
-public class TC03 extends BaseTest {
+public class TC03_Login_With_Invalid_Password extends BaseTest {
     @Test
     public void TC03() {
         Log.info("User cannot log into Railway with invalid password ");
