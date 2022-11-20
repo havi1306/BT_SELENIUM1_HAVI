@@ -1,7 +1,7 @@
 package utils;
 
 import common.constants.Constants;
-import org.openqa.selenium.chrome.ChromeDriver;
+import driver.LaunchDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
@@ -12,9 +12,7 @@ public class BaseTest {
     @Parameters(value={"browser"})
     public void beforeMethod(){
         System.out.println("Pre-Condition");
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\LAPTOP\\IdeaProjects\\BT_SELENIUM1_HAVI\\src\\test\\resources\\Executables\\chromedriver107.exe");
-        Constants.WEBDRIVER = new ChromeDriver();
-        Constants.WEBDRIVER.manage().window().maximize();
+            LaunchDriver.getDriver("chrome");
     }
 
     @AfterMethod
