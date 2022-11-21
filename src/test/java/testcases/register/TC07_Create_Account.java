@@ -1,4 +1,4 @@
-package testcases;
+package testcases.register;
 
 import com.github.javafaker.Faker;
 import common.Log;
@@ -9,7 +9,7 @@ import pages.HomePage;
 import pages.RegisterPage;
 import utils.BaseTest;
 
-public class TC07 extends BaseTest {
+public class TC07_Create_Account extends BaseTest {
     @Test
     public void TC07() {
         Faker faker = new Faker();

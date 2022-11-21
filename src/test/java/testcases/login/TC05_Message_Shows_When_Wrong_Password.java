@@ -1,4 +1,4 @@
-package testcases;
+package testcases.login;
 
 import common.Log;
 import common.constants.Constants;
@@ -8,7 +8,7 @@ import pages.HomePage;
 import pages.LoginPage;
 import utils.BaseTest;
 
-public class TC05 extends BaseTest {
+public class TC05_Message_Shows_When_Wrong_Password extends BaseTest {
     @Test
     public void TC05() {
 
@@ -33,7 +33,7 @@ public class TC05 extends BaseTest {
 
         Log.info("User can't login and message 'You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.' appears.");
         String actualMsg = loginPage.getErrorMessageLg();
-        Assert.assertEquals(actualMsg,"You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.");
+        Assert.assertEquals(actualMsg,"You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.", "Step 5 failed");
 
     }
 }

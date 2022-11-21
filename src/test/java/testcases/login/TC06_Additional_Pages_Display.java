@@ -1,4 +1,4 @@
-package testcases;
+package testcases.login;
 
 import common.Log;
 import common.constants.Constants;
@@ -10,7 +10,7 @@ import pages.LoginPage;
 import pages.MyTicketPage;
 import utils.BaseTest;
 
-public class TC06 extends BaseTest {
+public class TC06_Additional_Pages_Display extends BaseTest {
     @Test
     public void TC06(){
         Log.info("Additional pages display once user logged in");
