@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestRailway" thread-count="1" parallel="tests">
+    <test name="ChromeTest">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="testcases.login.TC01_Login_Successful"/>
+            <class name="testcases.login.TC02_Login_With_Blank_Username"/>
+            <class name="testcases.login.TC03_Login_With_Invalid_Password"/>
+            <class name="testcases.login.TC04_Login_Page_Displays"/>
+            <class name="testcases.login.TC05_Message_Shows_When_Wrong_Password"/>
+            <class name="testcases.login.TC06_Additional_Pages_Display"/>
+            <class name="testcases.register.TC07_Create_Account"/>
+        </classes>
+    </test>
+</suite>

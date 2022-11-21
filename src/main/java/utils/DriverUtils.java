@@ -1,4 +1,4 @@
-package common;
+package utils;
 
 import common.constants.Constants;
 import org.openqa.selenium.JavascriptExecutor;

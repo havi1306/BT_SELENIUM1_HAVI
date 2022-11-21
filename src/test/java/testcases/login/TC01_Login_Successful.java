@@ -1,4 +1,4 @@
-package testcases;
+package testcases.login;
 
 import common.Log;
 import common.constants.Constants;
@@ -8,18 +8,15 @@ import pages.HomePage;
 import pages.LoginPage;
 import utils.BaseTest;
 
-public class TC01 {
+public class TC01_Login_Successful extends BaseTest {
 
     @Test
     public void TC01() {
         Log.info("TC01: User can log into Railway with valid username and password");
-        BaseTest baseTest = new BaseTest();
         HomePage homePage = new HomePage();
         LoginPage loginPage = new LoginPage();
 
         // Launch Chrome
-        baseTest.beforeMethod();
-
         Log.info("1. Navigate to QA Railway Website");
         homePage.open();
 
@@ -38,7 +35,5 @@ public class TC01 {
                 "User is not logged and Welcome user message is not displayed");
 
         // Close Chrome
-        baseTest.afterMethod();
-
     }
 }
