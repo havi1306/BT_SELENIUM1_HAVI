@@ -1,17 +1,13 @@
 package pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import common.constants.Constants;
 
-public class HomePage extends NavigationPage {
+public class HomePage extends GeneralPage {
 
     //Locators
-    private WebElement btnLogin = getDriver().findElement(By.xpath("//a[contains(@href,'Account/Login')]"));
-
-
+    // Elements
     // Methods
-    public void clickBtnLogin() {
-        btnLogin.click();
+    public void open(){
+        Constants.WEBDRIVER.navigate().to(Constants.RAILWAY_URL);
     }
 }

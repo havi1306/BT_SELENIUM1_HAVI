@@ -1,24 +1,23 @@
 package utils;
 
-import driver.Driver;
-import org.openqa.selenium.WebDriver;
+import common.constants.Constants;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Parameters;
 
 public class BaseTest {
 
-    private WebDriver driver;
-    
-    @Parameters(value={"browser"})
-    public void preCondition(String browser) {
-        WebDriver driver = LaunchBrowser.getDriver(browser);
-        driver.setDriver(driver);
+    @BeforeMethod
+    public void beforeMethod(){
+        System.out.println("Pre-Condition");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\LAPTOP\\IdeaProjects\\BT_SELENIUM1_HAVI\\src\\test\\resources\\Executables\\chromedriver107.exe");
+        Constants.WEBDRIVER = new ChromeDriver();
+        Constants.WEBDRIVER.manage().window().maximize();
     }
 
     @AfterMethod
-    public void postCondition(){
-        // Quit the Browser
-        Driver.quit();
+    public void afterMethod() {
+        System.out.println("Post-Condition");
+        Constants.WEBDRIVER.quit();
     }
 }
