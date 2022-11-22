@@ -19,7 +19,7 @@ public class TC02_Login_With_Blank_Username extends BaseTest {
         homePage.open();
 
         Log.info("2. Click on 'Login' tab");
-        homePage.clickLoginTab();
+        homePage.clickMenuTab("Login");
 
         Log.info("3. User doesn't type any words into 'Username' textbox but enter valid information into 'Password' textbox ");
         Log.info("4. Click on 'Login' button");

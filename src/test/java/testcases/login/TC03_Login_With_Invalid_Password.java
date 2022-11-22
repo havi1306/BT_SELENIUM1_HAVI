@@ -19,7 +19,7 @@ public class TC03_Login_With_Invalid_Password extends BaseTest {
         homePage.open();
 
         Log.info("2. Click on 'Login' tab");
-        homePage.clickLoginTab();
+        homePage.clickMenuTab("Login");
 
         Log.info("3. Enter valid Email and invalid Password");
         Log.info("4. Click on 'Login' button");

@@ -21,7 +21,7 @@ public class TC05_Message_Shows_When_Wrong_Password extends BaseTest {
         homePage.open();
 
         Log.info("2. Click on 'Login' tab");
-        homePage.clickLoginTab();
+        homePage.clickMenuTab("Login");
 
         Log.info("3. Enter valid information into 'Username' textbox except 'Password' textbox.");
         Log.info("4. Click on 'Login' button");

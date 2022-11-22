@@ -1,4 +1,4 @@
-package driver;
+package utils;
 
 import common.constants.Constants;
 import org.openqa.selenium.chrome.ChromeDriver;

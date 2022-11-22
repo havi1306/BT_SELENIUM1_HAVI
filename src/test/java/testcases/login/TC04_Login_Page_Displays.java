@@ -19,7 +19,7 @@ public class TC04_Login_Page_Displays extends BaseTest {
         homePage.open();
 
         Log.info("2. Click on 'Book ticket' tab");
-        homePage.clickBookTicketTab();
+        homePage.clickMenuTab("Book ticket");
 
         Log.info("Login page displays instead of Book ticket page");
         Assert.assertEquals(loginPage.getPageTitle(), Constants.LOGIN_PAGE_TITLE);

@@ -13,6 +13,7 @@ public class RegisterPage extends GeneralPage{
     private final By txtPID = By.id("pid");
     private final By btnRegister = By.xpath("//input[@value='Register']");
     private final By lblRegisterMessage = By.xpath("//div[@id='content']/p");
+    private final By getLblRegisterErrorMessage = By.xpath("//p[@class='message error']");
 
     private WebElement getEmailTxt(){
         return Constants.WEBDRIVER.findElement(txtEmail);
@@ -38,17 +39,24 @@ public class RegisterPage extends GeneralPage{
         return Constants.WEBDRIVER.findElement(lblRegisterMessage);
     }
 
-    public void registerRailWay(String email, String password, String confirmPassword, int PID){
+    private WebElement getRegisterErrorMgs(){
+        return Constants.WEBDRIVER.findElement(getLblRegisterErrorMessage);
+    }
+    public void registerRailWay(String email, String password, String confirmPassword, String PID){
         DriverUtils.scrollToElement(getEmailTxt());
         this.getEmailTxt().sendKeys(email);
         this.getPasswordTxt().sendKeys(password);
         this.getConfirmPasswordTxt().sendKeys(confirmPassword);
-        this.getPIDTxt().sendKeys(String.valueOf(PID));
+        this.getPIDTxt().sendKeys(PID);
         DriverUtils.scrollToElement(getRegisterBtn());
         this.getRegisterBtn().click();
     }
 
     public String getRegisterMessage(){
         return this.getLblRegisterMgs().getText();
+    }
+
+    public String getRegisterErrorMessage(){
+        return this.getRegisterErrorMgs().getText();
     }
 }

@@ -23,22 +23,22 @@ public class TC06_Additional_Pages_Display extends BaseTest {
         homePage.open();
 
         Log.info("2. Click on 'Login' tab");
-        homePage.clickLoginTab();
+        homePage.clickMenuTab("Login");
 
         Log.info("3. Login with valid account");
         loginPage.loginRailWay(Constants.USERNAME, Constants.PASSWORD);
 
         Log.info("'My ticket', 'Change password' and 'Logout' tabs are displayed.");
-        Assert.assertTrue(homePage.isMyTicketTabDisplayed());
-        Assert.assertTrue(homePage.isChangePasswordTabDisplayed());
-        Assert.assertTrue(homePage.isLogoutTabDisplayed());
+        Assert.assertTrue(homePage.isMenuTabDisplayed("My ticket"));
+        Assert.assertTrue(homePage.isMenuTabDisplayed("Change password"));
+        Assert.assertTrue(homePage.isMenuTabDisplayed("Log out"));
 
         Log.info("Click 'My ticket' tab, user will be directed to My ticket page");
-        homePage.clickMyTicketTab();
+        homePage.clickMenuTab("My ticket");
         Assert.assertEquals(myTicketPage.getPageTitle(),Constants.MY_TICKET_PAGE_TITLE);
 
         Log.info("Click 'Change password' tab, user will be directed to Change password page");
-        homePage.clickChangePassword();
+        homePage.clickMenuTab("Change password");
         Assert.assertEquals(changePasswordPage.getPageTitle(),Constants.CHANGE_PASSWORD_PAGE_TITLE);
     }
 }

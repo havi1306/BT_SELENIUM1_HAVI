@@ -21,7 +21,7 @@ public class TC01_Login_Successful extends BaseTest {
         homePage.open();
 
         Log.info("2. Click on 'Login' tab");
-        homePage.clickLoginTab();
+        homePage.clickMenuTab("Login");
 
         Log.info("3. Enter valid Email and Password");
         Log.info("4. Click on 'Login' button");
