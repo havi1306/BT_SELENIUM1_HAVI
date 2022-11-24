@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.LoginPage;
 import utils.BaseTest;
+import utils.DriverUtils;
 
 public class TC01_Login_Successful extends BaseTest {
 
@@ -18,13 +19,12 @@ public class TC01_Login_Successful extends BaseTest {
 
         // Launch Chrome
         Log.info("1. Navigate to QA Railway Website");
-        homePage.open();
+        DriverUtils.open();
 
         Log.info("2. Click on 'Login' tab");
         homePage.clickMenuTab("Login");
 
-        Log.info("3. Enter valid Email and Password");
-        Log.info("4. Click on 'Login' button");
+        Log.info("3. Login with valid Email and Password");
         loginPage.loginRailWay(Constants.USERNAME, Constants.PASSWORD);
 
         Log.info("User is logged into Railway. Welcome user message is displayed.");

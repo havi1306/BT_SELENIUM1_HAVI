@@ -8,6 +8,8 @@ public class Constants {
     public static final String USERNAME = "havi1306@yopmail.com";
     public static final String PASSWORD = "1234567890";
     public static final int DEFAULT_NUMBER_OF_CHARACTERS = 8;
+    public static final int TIMEOUT_IN_SECONDS = 3;
+
 
     // Titles
     public static final String LOGIN_PAGE_TITLE = "Safe Railway - Login";

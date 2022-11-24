@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.RegisterPage;
 import utils.BaseTest;
+import utils.DriverUtils;
 
 public class TC07_Create_Account extends BaseTest {
     @Test
@@ -23,13 +24,11 @@ public class TC07_Create_Account extends BaseTest {
         HomePage homePage = new HomePage();
         RegisterPage registerPage = new RegisterPage();
 
-        Log.info("1. Navigate to QA Railway Website");
-        homePage.open();
-        Log.info("2. Click on 'Register' tab");
+        DriverUtils.open();
+        Log.info("1. Click on 'Register' tab");
         homePage.clickMenuTab("Register");
 
-        Log.info("3. Enter valid information into all fields");
-        Log.info("4. Click on 'Register' button");
+        Log.info("2. Enter valid information into all fields and Click on 'Register' button");
         registerPage.registerRailWay(validEmail, validPassword, validConfirmPassword, validPID);
 
         Log.info("New account is created and message 'Thank you for registering your account' appears.");

@@ -3,22 +3,23 @@ package pages;
 import common.constants.Constants;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import utils.DriverUtils;
 
 public class BookTicketPage extends GeneralPage {
 
-    String ddlName = "//select[@name='%s']";
-    String txtData = "//option[text()='%s']";
-
+    String comboboxName = "//select[@name='%s']";
+    String textOption = "//select[@name='%s']//option[text()='%s']";
+    Select selectByValue = new Select(Constants.WEBDRIVER.findElement(By.xpath(String.format(comboboxName))));
     private final By btnBookTicket = By.xpath("//input[@value='Book ticket']");
     private final By lblBookTicketMgs = By.xpath("//div[@id='content']/h1");
 
-    private WebElement getDropdownListName(String listName) {
-        return Constants.WEBDRIVER.findElement(By.xpath(String.format(ddlName, listName)));
+    private WebElement getComboboxName(String listName) {
+        return Constants.WEBDRIVER.findElement(By.xpath(String.format(comboboxName, listName)));
     }
 
-    private WebElement getData(String dataText) {
-        return Constants.WEBDRIVER.findElement(By.xpath(String.format(txtData, dataText)));
+    private WebElement getTextOption(String optionText) {
+        return Constants.WEBDRIVER.findElement(By.xpath(String.format(textOption, optionText)));
     }
 
     private WebElement getBookTicketMgs() {
@@ -29,11 +30,11 @@ public class BookTicketPage extends GeneralPage {
         return Constants.WEBDRIVER.findElement(btnBookTicket);
     }
 
-    public void clickAndSelectDropdownListData(String nameDdl, String dataTxt) {
-        DriverUtils.scrollToElement(getDropdownListName(nameDdl));
-        this.getDropdownListName(nameDdl).click();
-        this.getData(dataTxt).click();
-    }
+//    public void clickAndSelectDropdownListData(String nameDdl, String dataTxt) {
+//        DriverUtils.scrollToElement(getComboboxName(nameDdl));
+//        this.getComboboxName(nameDdl).click();
+//        this.getTextOption(dataTxt).click();
+//    }
 
     public void clickBookTicketButton(){
         this.getBookTicketButton().click();
@@ -41,6 +42,16 @@ public class BookTicketPage extends GeneralPage {
 
     public String getBookTicketMessage(){
         return this.getBookTicketMgs().getText();
+    }
+
+    public void clickOnDropdown(String name) {
+        DriverUtils.scrollToElement(getComboboxName(name));
+        this.getTextOption(name).click();
+    }
+
+    public void selectByValue(String name, String value){
+        clickOnDropdown(name);
+        selectByValue.selectByValue(value);
     }
 
 }

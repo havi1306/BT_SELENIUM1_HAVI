@@ -26,16 +26,14 @@ public class TC08_Login_With_Account_Has_Not_Been_Activated extends BaseTest {
         String validConfirmPassword = validPassword;
         String validPID = Random.getRandomCharacters();
 
-        homePage.open();
+        DriverUtils.open();
         homePage.clickMenuTab("Register");
         registerPage.registerRailWay(validEmail,validPassword,validConfirmPassword, validPID);
 
-        Log.info("1. Navigate to QA Railway Website");
-        Log.info("2. Click on 'Login' tab");
+        Log.info("1. Click on 'Login' tab");
         homePage.clickMenuTab("Login");
 
-        Log.info("3. Enter username and password of account hasn't been activated.");
-        Log.info("4. Click on 'Login' button");
+        Log.info("3. Login with username and password of account hasn't been activated.");
         loginPage.loginRailWay(validEmail, validPassword);
         DriverUtils.hardWait(500);
 

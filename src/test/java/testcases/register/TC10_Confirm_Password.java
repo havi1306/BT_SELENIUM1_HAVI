@@ -24,13 +24,12 @@ public class TC10_Confirm_Password extends BaseTest {
 
         Log.info("User can't create account with 'Confirm password' is not the same with 'Password'");
         Log.info("1. Navigate to QA Railway Website");
-        homePage.open();
+        DriverUtils.open();
 
         Log.info("2. Click on 'Register' tab");
         homePage.clickMenuTab("Register");
 
-        Log.info("3. Enter valid information into all fields except 'Confirm password' is not the same with 'Password'");
-        Log.info("4. Click on 'Register' button");
+        Log.info("3. Enter valid information into all fields except 'Confirm password' is not the same with 'Password' and register");
         registerPage.registerRailWay(validEmail, validPassword, invalidConfirmPassword, validPID);
         DriverUtils.hardWait(1000);
 

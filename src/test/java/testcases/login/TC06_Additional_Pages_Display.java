@@ -21,7 +21,7 @@ public class TC06_Additional_Pages_Display extends BaseTest {
         ChangePasswordPage changePasswordPage = new ChangePasswordPage();
 
         Log.info("1. Navigate to QA Railway Website");
-        homePage.open();
+        DriverUtils.open();
 
         Log.info("2. Click on 'Login' tab");
         homePage.clickMenuTab("Login");
@@ -37,10 +37,10 @@ public class TC06_Additional_Pages_Display extends BaseTest {
 
         Log.info("Click 'My ticket' tab, user will be directed to My ticket page");
         homePage.clickMenuTab("My ticket");
-        Assert.assertEquals(myTicketPage.getPageTitle(),Constants.MY_TICKET_PAGE_TITLE);
+        Assert.assertEquals(DriverUtils.getPageTitle(),Constants.MY_TICKET_PAGE_TITLE);
 
         Log.info("Click 'Change password' tab, user will be directed to Change password page");
         homePage.clickMenuTab("Change password");
-        Assert.assertEquals(changePasswordPage.getPageTitle(),Constants.CHANGE_PASSWORD_PAGE_TITLE);
+        Assert.assertEquals(DriverUtils.getPageTitle(),Constants.CHANGE_PASSWORD_PAGE_TITLE);
     }
 }

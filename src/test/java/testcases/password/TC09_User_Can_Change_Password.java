@@ -29,21 +29,19 @@ public class TC09_User_Can_Change_Password extends BaseTest {
         String validPID = Random.getRandomCharacters();
         String newPassword = Random.getRandomCharacters();
 
-        homePage.open();
+        DriverUtils.open();
         homePage.clickMenuTab("Register");
         registerPage.registerRailWay(validEmail, validPassword, validConfirmPassword, validPID);
 
-        Log.info("1. Navigate to QA Railway Website");
-        Log.info("2. Login with valid account");
+        Log.info("1. Login with valid account");
         homePage.clickMenuTab("Login");
         loginPage.loginRailWay(validEmail, validPassword);
         DriverUtils.hardWait(500);
 
-        Log.info("3. Click on 'Change Password' tab");
+        Log.info("2. Click on 'Change Password' tab");
         homePage.clickMenuTab("Change password");
 
-        Log.info("4. Enter valid value into all fields.");
-        Log.info("5. Click on 'Change Password' button");
+        Log.info("3. Enter valid value into all fields. and Click on 'Change Password' button");
         changePasswordPage.changePassword(validPassword, newPassword, newPassword);
 
         Log.info("Message 'Your password has been updated' appears.");

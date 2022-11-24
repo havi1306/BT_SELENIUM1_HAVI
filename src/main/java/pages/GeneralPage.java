@@ -21,15 +21,18 @@ public class GeneralPage {
         return this.getLblWelcomeMessage().getText();
     }
 
-    public String getPageTitle() {
-        return Constants.WEBDRIVER.getTitle();
-    }
+
 
     public boolean isMenuTabDisplayed(String tabName) {
-        return this.getTabMenu(tabName).isDisplayed();
+        try {
+            return this.getTabMenu(tabName).isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     public void clickMenuTab(String name){
         getTabMenu(name).click();
     }
+
 }

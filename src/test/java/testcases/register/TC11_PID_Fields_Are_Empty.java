@@ -23,14 +23,12 @@ public class TC11_PID_Fields_Are_Empty extends BaseTest {
         String invalidPID = "";
 
         Log.info("User can't create account with 'Confirm password' is not the same with 'Password'");
-        Log.info("1. Navigate to QA Railway Website");
-        homePage.open();
+        DriverUtils.open();
 
-        Log.info("2. Click on 'Register' tab");
+        Log.info("1. Click on 'Register' tab");
         homePage.clickMenuTab("Register");
 
-        Log.info("3. Enter valid email address and leave other fields empty");
-        Log.info("4. Click on 'Register' button");
+        Log.info("2. Enter valid email address and leave other fields empty and click register");
         registerPage.registerRailWay(validEmail, invalidPassword, invalidConfirmPassword, invalidPID);
         DriverUtils.hardWait(1000);
 
