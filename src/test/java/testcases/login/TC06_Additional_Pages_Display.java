@@ -25,7 +25,6 @@ public class TC06_Additional_Pages_Display extends BaseTest {
 
         Log.info("3. Login with valid account");
         loginPage.loginRailWay(Constants.USERNAME, Constants.PASSWORD);
-        DriverUtils.hardWait(1000);
 
         Log.info("'My ticket', 'Change password' and 'Logout' tabs are displayed.");
         Assert.assertTrue(homePage.isMenuTabDisplayed("My ticket"));

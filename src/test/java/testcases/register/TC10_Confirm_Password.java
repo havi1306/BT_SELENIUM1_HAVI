@@ -30,7 +30,6 @@ public class TC10_Confirm_Password extends BaseTest {
 
         Log.info("3. Enter valid information into all fields except 'Confirm password' is not the same with 'Password' and register");
         registerPage.registerRailWay(validEmail, validPassword, invalidConfirmPassword, validPID);
-        DriverUtils.hardWait(1000);
 
         Log.info("Message 'There're errors in the form. Please correct the errors and try again.' appears.");
         String actualMgs = registerPage.getRegisterErrorMessage();

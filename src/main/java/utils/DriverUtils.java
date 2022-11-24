@@ -26,10 +26,6 @@ public class DriverUtils {
         waitElement.until(ExpectedConditions.visibilityOf(webElement));
     }
 
-    public static void clickOutsideOfElement(WebElement webElement, int xOffset, int yOffset) {
-        Actions act = new Actions(Constants.WEBDRIVER);
-        act.moveToElement(webElement).moveByOffset(xOffset, yOffset).click().perform();
-    }
     public static String getPageTitle() {
         return Constants.WEBDRIVER.getTitle();
     }
