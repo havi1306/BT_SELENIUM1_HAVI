@@ -13,7 +13,10 @@ public class RegisterPage extends GeneralPage{
     private final By txtPID = By.id("pid");
     private final By btnRegister = By.xpath("//input[@value='Register']");
     private final By lblRegisterMessage = By.xpath("//div[@id='content']/p");
+    private final By lblRegisterErrorMessage = By.xpath("//p[@class='message error']");
+    private final By lblPasswordErrorMessage = By.xpath("//li[@class='password']/label[@class='validation-error']");
 
+    private final By lblPIDErrorMessage = By.xpath("//li[@class='pid-number']/label[@class='validation-error']");
     private WebElement getEmailTxt(){
         return Constants.WEBDRIVER.findElement(txtEmail);
     }
@@ -38,12 +41,23 @@ public class RegisterPage extends GeneralPage{
         return Constants.WEBDRIVER.findElement(lblRegisterMessage);
     }
 
-    public void registerRailWay(String email, String password, String confirmPassword, int PID){
+    private WebElement getRegisterErrorMgs(){
+        return Constants.WEBDRIVER.findElement(lblRegisterErrorMessage);
+    }
+
+    private WebElement getPasswordErrorMgs(){
+        return Constants.WEBDRIVER.findElement(lblPasswordErrorMessage);
+    }
+
+    private WebElement getPIDErrorMgs(){
+        return Constants.WEBDRIVER.findElement(lblPIDErrorMessage);
+    }
+    public void registerRailWay(String email, String password, String confirmPassword, String PID){
         DriverUtils.scrollToElement(getEmailTxt());
         this.getEmailTxt().sendKeys(email);
         this.getPasswordTxt().sendKeys(password);
         this.getConfirmPasswordTxt().sendKeys(confirmPassword);
-        this.getPIDTxt().sendKeys(String.valueOf(PID));
+        this.getPIDTxt().sendKeys(PID);
         DriverUtils.scrollToElement(getRegisterBtn());
         this.getRegisterBtn().click();
     }
@@ -51,4 +65,12 @@ public class RegisterPage extends GeneralPage{
     public String getRegisterMessage(){
         return this.getLblRegisterMgs().getText();
     }
+
+    public String getRegisterErrorMessage(){
+        return this.getRegisterErrorMgs().getText();
+    }
+
+    public String getPasswordErrorMessage(){ return this.getPasswordErrorMgs().getText();}
+
+    public String getPIDErrorMessage(){ return this.getPIDErrorMgs().getText();}
 }

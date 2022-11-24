@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.LoginPage;
 import utils.BaseTest;
+import utils.DriverUtils;
 
 public class TC03_Login_With_Invalid_Password extends BaseTest {
     @Test
@@ -16,13 +17,12 @@ public class TC03_Login_With_Invalid_Password extends BaseTest {
         LoginPage loginPage = new LoginPage();
 
         Log.info("1. Navigate to QA Railway Website");
-        homePage.open();
+        DriverUtils.open();
 
         Log.info("2. Click on 'Login' tab");
-        homePage.clickLoginTab();
+        homePage.clickMenuTab("Login");
 
-        Log.info("3. Enter valid Email and invalid Password");
-        Log.info("4. Click on 'Login' button");
+        Log.info("3.Login with valid Email and invalid Password");
         loginPage.loginRailWay(Constants.USERNAME, "");
 
         Log.info("Error message 'There was a problem with your login and/or errors exist in your form.' is displayed");

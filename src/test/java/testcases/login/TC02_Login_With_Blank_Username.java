@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.LoginPage;
 import utils.BaseTest;
+import utils.DriverUtils;
 
 public class TC02_Login_With_Blank_Username extends BaseTest {
     @Test
@@ -16,13 +17,12 @@ public class TC02_Login_With_Blank_Username extends BaseTest {
         LoginPage loginPage = new LoginPage();
 
         Log.info("1. Navigate to QA Railway Website");
-        homePage.open();
+        DriverUtils.open();
 
         Log.info("2. Click on 'Login' tab");
-        homePage.clickLoginTab();
+        homePage.clickMenuTab("Login");
 
         Log.info("3. User doesn't type any words into 'Username' textbox but enter valid information into 'Password' textbox ");
-        Log.info("4. Click on 'Login' button");
         loginPage.loginRailWay("", Constants.PASSWORD);
 
         Log.info("User can't login and message 'There was a problem with your login and/or errors exist in your form.' appears.");
