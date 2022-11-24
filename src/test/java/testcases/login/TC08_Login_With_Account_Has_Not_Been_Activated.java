@@ -34,7 +34,6 @@ public class TC08_Login_With_Account_Has_Not_Been_Activated extends BaseTest {
 
         Log.info("3. Login with username and password of account hasn't been activated.");
         loginPage.loginRailWay(validEmail, validPassword);
-        DriverUtils.hardWait(500);
 
         Log.info("User is logged into Railway. Welcome user message is displayed.");
         String actualMsg = loginPage.getWelcomeMessage();

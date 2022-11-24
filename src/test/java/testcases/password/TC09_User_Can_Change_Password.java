@@ -35,7 +35,6 @@ public class TC09_User_Can_Change_Password extends BaseTest {
         Log.info("1. Login with valid account");
         homePage.clickMenuTab("Login");
         loginPage.loginRailWay(validEmail, validPassword);
-        DriverUtils.hardWait(500);
 
         Log.info("2. Click on 'Change Password' tab");
         homePage.clickMenuTab("Change password");

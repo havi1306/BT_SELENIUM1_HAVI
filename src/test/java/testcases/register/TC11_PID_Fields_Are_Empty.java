@@ -27,7 +27,6 @@ public class TC11_PID_Fields_Are_Empty extends BaseTest {
 
         Log.info("2. Enter valid email address and leave other fields empty and click register");
         registerPage.registerRailWay(validEmail, invalidPassword, invalidConfirmPassword, invalidPID);
-        DriverUtils.hardWait(1000);
 
         Log.info("Message 'There're errors in the form. Please correct the errors and try again.' appears above the form.");
         String actualMgs = registerPage.getRegisterErrorMessage();
