@@ -31,9 +31,9 @@ public class TC05_Message_Shows_When_Wrong_Password extends BaseTest {
             loginPage.loginRailWay(Constants.USERNAME, invalidPass);
         }
 
-        Log.info("User can't login and message 'You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.' appears.");
+        Log.info("User can't login and message 'Invalid username or password. Please try again.' appears.");
         String actualMsg = loginPage.getErrorMessageLg();
-        Assert.assertEquals(actualMsg,"You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.", "Step 5 failed");
+        Assert.assertEquals(actualMsg,"Invalid username or password. Please try again.", "Step 5 failed");
 
     }
 }
