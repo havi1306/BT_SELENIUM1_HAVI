@@ -12,10 +12,8 @@ import utils.BaseTest;
 import utils.DriverUtils;
 
 public class TC08_Login_With_Account_Has_Not_Been_Activated extends BaseTest {
-    @Test
+    @Test(description = "User can login with an account hasn't been activated")
     public void TC08(){
-        Log.info("TC08 - User can login with an account hasn't been activated");
-        Log.info("Pre-condition: Create a new account but do not activate it");
 
         HomePage homePage = new HomePage();
         LoginPage loginPage = new LoginPage();
@@ -27,6 +25,7 @@ public class TC08_Login_With_Account_Has_Not_Been_Activated extends BaseTest {
         String validPID = Random.getRandomCharacters();
 
         DriverUtils.open();
+        Log.info("Pre-condition: Create a new account but do not activate it");
         homePage.clickMenuTab("Register");
         registerPage.registerRailWay(validEmail,validPassword,validConfirmPassword, validPID);
 

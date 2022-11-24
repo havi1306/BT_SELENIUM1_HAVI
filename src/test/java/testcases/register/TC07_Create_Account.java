@@ -12,7 +12,7 @@ import utils.BaseTest;
 import utils.DriverUtils;
 
 public class TC07_Create_Account extends BaseTest {
-    @Test
+    @Test(description = "User can create new account")
     public void TC07() {
 
         String validEmail = Random.getRandomEmail();
@@ -20,7 +20,6 @@ public class TC07_Create_Account extends BaseTest {
         String validConfirmPassword = validPassword;
         String validPID = Random.getRandomCharacters();
 
-        Log.info("User can create new account");
         HomePage homePage = new HomePage();
         RegisterPage registerPage = new RegisterPage();
 

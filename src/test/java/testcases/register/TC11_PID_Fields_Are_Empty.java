@@ -11,9 +11,8 @@ import utils.BaseTest;
 import utils.DriverUtils;
 
 public class TC11_PID_Fields_Are_Empty extends BaseTest {
-    @Test
+    @Test(description = "User can't create account while password and PID fields are empty")
     public void TC11(){
-        Log.info("User can't create account while password and PID fields are empty");
         HomePage homePage = new HomePage();
         RegisterPage registerPage = new RegisterPage();
 
@@ -22,9 +21,7 @@ public class TC11_PID_Fields_Are_Empty extends BaseTest {
         String invalidConfirmPassword = invalidPassword;
         String invalidPID = "";
 
-        Log.info("User can't create account with 'Confirm password' is not the same with 'Password'");
         DriverUtils.open();
-
         Log.info("1. Click on 'Register' tab");
         homePage.clickMenuTab("Register");
 

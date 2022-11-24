@@ -10,9 +10,8 @@ import utils.BaseTest;
 import utils.DriverUtils;
 
 public class TC03_Login_With_Invalid_Password extends BaseTest {
-    @Test
+    @Test(description = "User cannot log into Railway with invalid password ")
     public void TC03() {
-        Log.info("User cannot log into Railway with invalid password ");
         HomePage homePage = new HomePage();
         LoginPage loginPage = new LoginPage();
 

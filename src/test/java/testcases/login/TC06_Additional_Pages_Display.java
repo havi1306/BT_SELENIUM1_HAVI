@@ -12,13 +12,10 @@ import utils.BaseTest;
 import utils.DriverUtils;
 
 public class TC06_Additional_Pages_Display extends BaseTest {
-    @Test
+    @Test(description = "Additional pages display once user logged in")
     public void TC06(){
-        Log.info("Additional pages display once user logged in");
         HomePage homePage = new HomePage();
         LoginPage loginPage = new LoginPage();
-        MyTicketPage myTicketPage = new MyTicketPage();
-        ChangePasswordPage changePasswordPage = new ChangePasswordPage();
 
         Log.info("1. Navigate to QA Railway Website");
         DriverUtils.open();
