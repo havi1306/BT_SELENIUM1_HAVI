@@ -11,7 +11,7 @@ import utils.BaseTest;
 import utils.DriverUtils;
 
 public class TC10_Confirm_Password extends BaseTest {
-    @Test
+    @Test(description = "User can't create account with 'Confirm password' is not the same with 'Password'")
     public void TC10(){
 
         HomePage homePage = new HomePage();
@@ -22,7 +22,6 @@ public class TC10_Confirm_Password extends BaseTest {
         String invalidConfirmPassword = "";
         String validPID = Random.getRandomCharacters();
 
-        Log.info("User can't create account with 'Confirm password' is not the same with 'Password'");
         Log.info("1. Navigate to QA Railway Website");
         DriverUtils.open();
 

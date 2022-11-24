@@ -9,17 +9,11 @@ import utils.DriverUtils;
 public class BookTicketPage extends GeneralPage {
 
     String comboboxName = "//select[@name='%s']";
-    String textOption = "//select[@name='%s']//option[text()='%s']";
-    Select selectByValue = new Select(Constants.WEBDRIVER.findElement(By.xpath(String.format(comboboxName))));
     private final By btnBookTicket = By.xpath("//input[@value='Book ticket']");
     private final By lblBookTicketMgs = By.xpath("//div[@id='content']/h1");
 
     private WebElement getComboboxName(String listName) {
         return Constants.WEBDRIVER.findElement(By.xpath(String.format(comboboxName, listName)));
-    }
-
-    private WebElement getTextOption(String optionText) {
-        return Constants.WEBDRIVER.findElement(By.xpath(String.format(textOption, optionText)));
     }
 
     private WebElement getBookTicketMgs() {
@@ -30,11 +24,11 @@ public class BookTicketPage extends GeneralPage {
         return Constants.WEBDRIVER.findElement(btnBookTicket);
     }
 
-//    public void clickAndSelectDropdownListData(String nameDdl, String dataTxt) {
-//        DriverUtils.scrollToElement(getComboboxName(nameDdl));
-//        this.getComboboxName(nameDdl).click();
-//        this.getTextOption(dataTxt).click();
-//    }
+    public void clickAndSelectDropdownListData1(String nameDdl, String dataTxt) {
+        DriverUtils.scrollToElement(getComboboxName(nameDdl));
+        Select selectDropdown = new Select(this.getComboboxName(nameDdl));
+        selectDropdown.selectByVisibleText(dataTxt);
+    }
 
     public void clickBookTicketButton(){
         this.getBookTicketButton().click();
@@ -42,16 +36,6 @@ public class BookTicketPage extends GeneralPage {
 
     public String getBookTicketMessage(){
         return this.getBookTicketMgs().getText();
-    }
-
-    public void clickOnDropdown(String name) {
-        DriverUtils.scrollToElement(getComboboxName(name));
-        this.getTextOption(name).click();
-    }
-
-    public void selectByValue(String name, String value){
-        clickOnDropdown(name);
-        selectByValue.selectByValue(value);
     }
 
 }

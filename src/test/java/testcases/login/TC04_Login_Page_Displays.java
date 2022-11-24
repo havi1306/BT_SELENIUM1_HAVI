@@ -10,9 +10,8 @@ import utils.BaseTest;
 import utils.DriverUtils;
 
 public class TC04_Login_Page_Displays extends BaseTest {
-    @Test
+    @Test(description = "Login page displays when un-logged User clicks on 'Book ticket' tab")
     public void TC04() {
-        Log.info("Login page displays when un-logged User clicks on 'Book ticket' tab");
         HomePage homePage = new HomePage();
 
         Log.info("1. Navigate to QA Railway Website");

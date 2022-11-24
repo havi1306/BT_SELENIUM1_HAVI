@@ -11,9 +11,8 @@ import utils.DriverUtils;
 
 public class TC01_Login_Successful extends BaseTest {
 
-    @Test
+    @Test(description = "User can log into Railway with valid username and password")
     public void TC01() {
-        Log.info("TC01: User can log into Railway with valid username and password");
         HomePage homePage = new HomePage();
         LoginPage loginPage = new LoginPage();
 

@@ -10,9 +10,8 @@ import utils.BaseTest;
 import utils.DriverUtils;
 
 public class TC02_Login_With_Blank_Username extends BaseTest {
-    @Test
+    @Test(description="User can't login with blank 'Username' textbox")
     public void TC02() {
-        Log.info("User can't login with blank 'Username' textbox");
         HomePage homePage = new HomePage();
         LoginPage loginPage = new LoginPage();
 

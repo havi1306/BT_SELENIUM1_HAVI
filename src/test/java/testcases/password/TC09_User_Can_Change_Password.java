@@ -13,10 +13,8 @@ import utils.BaseTest;
 import utils.DriverUtils;
 
 public class TC09_User_Can_Change_Password extends BaseTest {
-    @Test
+    @Test(description = "User can change password")
     public void TC09() {
-        Log.info("TC09 - User can change password");
-        Log.info("Pre-condition: Create and activate a new account");
 
         HomePage homePage = new HomePage();
         LoginPage loginPage = new LoginPage();
@@ -30,6 +28,7 @@ public class TC09_User_Can_Change_Password extends BaseTest {
         String newPassword = Random.getRandomCharacters();
 
         DriverUtils.open();
+        Log.info("Pre-condition: Create and activate a new account");
         homePage.clickMenuTab("Register");
         registerPage.registerRailWay(validEmail, validPassword, validConfirmPassword, validPID);
 

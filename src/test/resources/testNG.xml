@@ -11,6 +11,8 @@
             <class name="testcases.login.TC05_Message_Shows_When_Wrong_Password"/>
             <class name="testcases.login.TC06_Additional_Pages_Display"/>
             <class name="testcases.register.TC07_Create_Account"/>
+            <class name="testcases.register.TC10_Confirm_Password"/>
+            <class name="testcases.register.TC11_PID_Fields_Are_Empty"/>
         </classes>
     </test>
 </suite>

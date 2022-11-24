@@ -10,11 +10,10 @@ import utils.BaseTest;
 import utils.DriverUtils;
 
 public class TC05_Message_Shows_When_Wrong_Password extends BaseTest {
-    @Test
+    @Test(description = "System shows message when user enters wrong password several times")
     public void TC05() {
 
         String invalidPass = "abc123456";
-        Log.info("System shows message when user enters wrong password several times");
         HomePage homePage = new HomePage();
         LoginPage loginPage = new LoginPage();
 
